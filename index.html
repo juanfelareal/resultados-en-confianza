@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Resultados 2025-2026 - En Confianza | LA REAL</title>
 
     <meta property="og:title" content="Resultados 2025-2026 - En Confianza">
@@ -160,44 +160,117 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            h1 { font-size: 32px; letter-spacing: -1.5px; margin-bottom: 20px; }
-            h2 { font-size: 26px; letter-spacing: -1px; margin-bottom: 16px; }
-            .slide { padding: 60px 16px 20px !important; overflow-y: auto; }
-            .slide-portada, .slide-cierre { justify-content: center; }
-            .subtitle { font-size: 16px; max-width: 100%; }
-            .section-tag { font-size: 10px; letter-spacing: 3px; padding: 6px 14px; margin-bottom: 14px; }
+            h1 { font-size: 34px; letter-spacing: -1.5px; margin-bottom: 16px; }
+            h2 { font-size: 26px; letter-spacing: -1px; margin-bottom: 14px; }
+            .slide {
+                padding: 70px 20px 90px !important;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .slide-portada, .slide-cierre { justify-content: center; padding-top: 40px !important; }
+            .subtitle { font-size: 15px; max-width: 100%; }
+            .section-tag { font-size: 10px; letter-spacing: 3px; padding: 6px 14px; margin-bottom: 12px; }
 
-            .year-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+            /* Year grid: stacked cards */
+            .year-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+            .year-card { padding: 20px; gap: 6px; }
             .year-card.current { transform: none; }
+            .year-card.current:hover { transform: none; }
             .year-revenue { font-size: 32px; }
+            .year-orders { font-size: 13px; }
+            .year-growth { font-size: 11px; padding: 3px 12px; }
+            .year-meta { font-size: 12px; }
+            .year-current-tag { top: -11px; font-size: 9px; padding: 3px 12px; }
 
-            .chart-wrapper { margin-top: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .chart-container { min-width: 700px; height: 240px; gap: 3px; }
-            .chart-val { font-size: 8px; }
-            .chart-label { font-size: 8px; }
-            .chart-legend { margin-top: 36px; gap: 12px; flex-wrap: wrap; }
+            /* Bar chart → horizontal bars */
+            .chart-wrapper { margin-top: 10px; overflow-x: visible; }
+            .chart-container {
+                flex-direction: column;
+                height: auto;
+                min-width: unset;
+                gap: 3px;
+                padding-bottom: 0;
+                border-bottom: none;
+                align-items: stretch;
+            }
+            .chart-col {
+                display: grid;
+                grid-template-columns: 30px 1fr 48px;
+                height: 22px;
+                align-items: center;
+                gap: 4px;
+                flex: none;
+            }
+            .chart-val {
+                grid-column: 3; grid-row: 1;
+                margin-bottom: 0;
+                font-size: 10px;
+                text-align: left;
+            }
+            .chart-bar {
+                grid-column: 2; grid-row: 1;
+                border-radius: 0 5px 5px 0 !important;
+                min-height: unset;
+            }
+            .chart-label {
+                grid-column: 1; grid-row: 1;
+                position: static;
+                font-size: 10px;
+                text-align: right;
+            }
+            .chart-divider {
+                height: auto !important; width: 100%;
+                margin: 8px 0 4px; padding: 0;
+                border-left: none !important;
+                border-top: 1.5px dashed #c9cdd3;
+                background: none !important;
+            }
+            .chart-divider-label { position: static; font-size: 10px; text-align: center; margin-top: 2px; }
+            .chart-legend { margin-top: 16px; gap: 12px; flex-wrap: wrap; }
+            .chart-legend-item { font-size: 11px; }
 
-            .meta-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 14px; }
-            .meta-card { padding: 10px 6px; }
-            .meta-roas { font-size: 15px; }
-            .meta-invest { font-size: 11px; }
+            /* Meta grid: 2 columns */
+            .meta-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 12px; }
+            .meta-card { padding: 12px 10px; gap: 3px; border-radius: 12px; }
+            .meta-month { font-size: 9px; letter-spacing: 0.5px; }
+            .meta-invest { font-size: 12px; }
+            .meta-roas { font-size: 16px; padding: 2px 8px; }
+            .meta-purchases { font-size: 11px; }
+            .meta-cpa { font-size: 10px; }
+            .meta-grid-label { font-size: 10px; letter-spacing: 1px; padding: 8px 0 2px; }
 
-            .evo-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
-            .evo-card { flex-direction: row; justify-content: space-between; padding: 18px 20px; }
-            .evo-after { font-size: 22px; }
-            .evo-result { flex-direction: column; gap: 14px; padding: 20px; margin-top: 14px; }
-            .evo-result-value { font-size: 26px; }
-            .evo-result-arrow { transform: rotate(90deg); font-size: 22px; }
+            /* Evo cards */
+            .evo-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 14px; }
+            .evo-card { padding: 18px 20px; gap: 2px; }
+            .evo-after { font-size: 24px; }
+            .evo-change { font-size: 10px; }
+            .evo-result { flex-direction: column; gap: 12px; padding: 20px; margin-top: 12px; border-radius: 16px; }
+            .evo-result-value { font-size: 28px; }
+            .evo-result-arrow { transform: rotate(90deg); font-size: 20px; }
+            .evo-result-label { font-size: 10px; }
 
-            .product-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 16px; }
+            /* Product cards */
+            .product-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+            .product-card { padding: 22px 20px; border-radius: 16px; gap: 6px; }
             .product-card.top { transform: none; }
+            .product-card.top:hover { transform: none; }
+            .product-rank { font-size: 36px; }
+            .product-name { font-size: 14px; }
+            .product-revenue { font-size: 24px; }
+            .product-top-tag { top: -10px; font-size: 9px; padding: 3px 12px; }
 
+            /* Hero pills */
             .hero-pills { flex-direction: column; align-items: center; gap: 10px; margin-top: 24px; }
-            .hero-pill { font-size: 13px; padding: 10px 18px; }
-            .navigation { bottom: 16px; right: 16px; gap: 8px; }
-            .nav-btn { width: 38px; height: 38px; font-size: 16px; border-radius: 10px; }
-            .slide-counter { bottom: 22px; left: 16px; font-size: 11px; }
+            .hero-pill { font-size: 13px; padding: 10px 20px; width: auto; max-width: 280px; justify-content: center; }
+
+            /* Navigation */
+            .navigation { bottom: max(16px, env(safe-area-inset-bottom)); right: 16px; gap: 8px; }
+            .nav-btn { width: 42px; height: 42px; font-size: 17px; border-radius: 10px; }
+            .slide-counter { bottom: max(22px, calc(env(safe-area-inset-bottom) + 6px)); left: 16px; font-size: 11px; }
             .fullscreen-hint { display: none; }
+
+            /* Bottom notes on slides */
+            .slide > p:last-child { font-size: 12px !important; padding-bottom: 10px; }
         }
     </style>
 </head>
@@ -603,7 +676,10 @@
         const totalSlides = 8;
 
         function showSlide(n) {
-            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.slide').forEach(s => {
+                s.classList.remove('active');
+                s.scrollTop = 0;
+            });
             const slide = document.getElementById(`slide${n}`);
             slide.classList.add('active');
             document.getElementById('slideCounter').textContent = `${n} / ${totalSlides}`;
@@ -623,21 +699,71 @@
         function nextSlide() { if (currentSlide < totalSlides) { currentSlide++; showSlide(currentSlide); } }
         function prevSlide() { if (currentSlide > 1) { currentSlide--; showSlide(currentSlide); } }
 
+        // Keyboard
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); nextSlide(); }
             else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
             else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
         });
 
-        document.querySelector('.presentation').addEventListener('click', (e) => {
-            if (!e.target.closest('.navigation') && !e.target.closest('a')) nextSlide();
-        });
+        // Click to advance (desktop only — mobile uses swipe)
+        if (!('ontouchstart' in window)) {
+            document.querySelector('.presentation').addEventListener('click', (e) => {
+                if (!e.target.closest('.navigation') && !e.target.closest('a')) nextSlide();
+            });
+        }
 
+        // Touch swipe navigation
+        let touchStartX = 0, touchStartY = 0, touchStartTime = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            touchStartTime = Date.now();
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].screenX - touchStartX;
+            const dy = e.changedTouches[0].screenY - touchStartY;
+            const dt = Date.now() - touchStartTime;
+            // Swipe: horizontal > vertical, min 50px, max 400ms
+            if (Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > 50 && dt < 400) {
+                if (dx < 0) nextSlide();
+                else prevSlide();
+            }
+        }, { passive: true });
+
+        // Fullscreen
         function toggleFullscreen() {
             if (!document.fullscreenElement) document.documentElement.requestFullscreen();
             else document.exitFullscreen();
         }
 
+        // Chart: switch to horizontal bars on mobile
+        function handleChart() {
+            const isMobile = window.innerWidth <= 768;
+            document.querySelectorAll('.chart-bar').forEach(bar => {
+                if (!bar.dataset.pct) bar.dataset.pct = bar.style.height || '0%';
+                if (!bar.dataset.bg) bar.dataset.bg = bar.style.background || '';
+                if (isMobile) {
+                    bar.style.width = bar.dataset.pct;
+                    bar.style.height = '100%';
+                    if (bar.dataset.bg.includes('180deg')) {
+                        bar.style.background = bar.dataset.bg.replace('180deg', '90deg');
+                    }
+                } else {
+                    bar.style.width = '100%';
+                    bar.style.height = bar.dataset.pct;
+                    if (bar.dataset.bg.includes('90deg')) {
+                        bar.style.background = bar.dataset.bg.replace('90deg', '180deg');
+                    } else if (bar.dataset.bg) {
+                        bar.style.background = bar.dataset.bg;
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('resize', handleChart);
+        handleChart();
         showSlide(1);
     </script>
 </body>
