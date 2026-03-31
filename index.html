@@ -263,6 +263,11 @@
             .hero-pills { flex-direction: column; align-items: center; gap: 10px; margin-top: 24px; }
             .hero-pill { font-size: 13px; padding: 10px 20px; width: auto; max-width: 280px; justify-content: center; }
 
+            /* Ad cards */
+            #slide8 > div:nth-child(3) { grid-template-columns: 1fr !important; gap: 14px !important; }
+            #slide8 > div:nth-child(3) > div { transform: none !important; }
+            #slide8 > div:nth-child(3) img { height: 140px !important; }
+
             /* Navigation */
             .navigation { bottom: max(16px, env(safe-area-inset-bottom)); right: 16px; gap: 8px; }
             .nav-btn { width: 42px; height: 42px; font-size: 17px; border-radius: 10px; }
@@ -277,7 +282,7 @@
 <body>
     <div class="presentation">
         <div class="progress" id="progress"></div>
-        <div class="slide-counter" id="slideCounter">1 / 8</div>
+        <div class="slide-counter" id="slideCounter">1 / 9</div>
         <div class="fullscreen-hint" id="fullscreenHint">Presiona F para pantalla completa</div>
 
         <!-- ==================== SLIDE 1: PORTADA (DARK) ==================== -->
@@ -656,8 +661,60 @@
             <p style="margin-top: 24px; font-size: 14px; font-weight: 600; color: #16a34a; text-align: center;">CarroSutra duplic&oacute; ventas (+106%) y Esposas Nick entra al top 3</p>
         </div>
 
-        <!-- ==================== SLIDE 8: CIERRE (DARK) ==================== -->
-        <div class="slide slide-dark slide-cierre" id="slide8">
+        <!-- ==================== SLIDE 8: TOP ANUNCIOS (LIGHT) ==================== -->
+        <div class="slide slide-light" id="slide8" style="padding-top: 70px;">
+            <span class="section-tag">Top anuncios &mdash; Marzo 2026</span>
+            <h2>Los ads que m&aacute;s <span class="highlight">venden</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; max-width: 960px; width: 100%;">
+                <!-- Ad 1: Video #2 -->
+                <div style="background: #fff; border-radius: 20px; padding: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.3s ease; border: 2px solid #16a34a; transform: scale(1.03); position: relative;">
+                    <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #16a34a; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 16px; border-radius: 50px; z-index: 3;">Top performer</div>
+                    <img src="ad1.jpg" alt="Video #2" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 18px 16px; text-align: center; display: flex; flex-direction: column; gap: 6px;">
+                        <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9ca3af;">Video #2</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #0D1B2A; letter-spacing: -1.5px; line-height: 1;">$8.6M</div>
+                        <div style="font-size: 12px; font-weight: 500; color: #6b7280;">en ventas generadas</div>
+                        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 4px; flex-wrap: wrap;">
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #DCFCE7; color: #166534;">ROAS 7.15x</span>
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #DCFCE7; color: #166534;">CPA $23K</span>
+                        </div>
+                        <div style="font-size: 12px; font-weight: 600; color: #9ca3af; margin-top: 2px;">52 compras &mdash; $1.2M invertido</div>
+                    </div>
+                </div>
+                <!-- Ad 2: Video #5 -->
+                <div style="background: #fff; border-radius: 20px; padding: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.3s ease;">
+                    <img src="ad2.jpg" alt="Video #5" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 18px 16px; text-align: center; display: flex; flex-direction: column; gap: 6px;">
+                        <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9ca3af;">Video #5</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #0D1B2A; letter-spacing: -1.5px; line-height: 1;">$5.4M</div>
+                        <div style="font-size: 12px; font-weight: 500; color: #6b7280;">en ventas generadas</div>
+                        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 4px; flex-wrap: wrap;">
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #DCFCE7; color: #166534;">ROAS 4.81x</span>
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #DCFCE7; color: #166534;">CPA $35K</span>
+                        </div>
+                        <div style="font-size: 12px; font-weight: 600; color: #9ca3af; margin-top: 2px;">32 compras &mdash; $1.1M invertido</div>
+                    </div>
+                </div>
+                <!-- Ad 3: Video #3 -->
+                <div style="background: #fff; border-radius: 20px; padding: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.3s ease;">
+                    <img src="ad3.jpg" alt="Video #3" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 18px 16px; text-align: center; display: flex; flex-direction: column; gap: 6px;">
+                        <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9ca3af;">Video #3</div>
+                        <div style="font-size: 28px; font-weight: 900; color: #0D1B2A; letter-spacing: -1.5px; line-height: 1;">$2.4M</div>
+                        <div style="font-size: 12px; font-weight: 500; color: #6b7280;">en ventas generadas</div>
+                        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 4px; flex-wrap: wrap;">
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #065F46; color: #fff;">ROAS 7.83x</span>
+                            <span style="display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; background: #DCFCE7; color: #166534;">CPA $20K</span>
+                        </div>
+                        <div style="font-size: 12px; font-weight: 600; color: #9ca3af; margin-top: 2px;">15 compras &mdash; $307K invertido</div>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 14px; font-weight: 600; color: #16a34a; text-align: center;">Formato UGC + emoci&oacute;n + producto = la f&oacute;rmula ganadora</p>
+        </div>
+
+        <!-- ==================== SLIDE 9: CIERRE (DARK) ==================== -->
+        <div class="slide slide-dark slide-cierre" id="slide9">
             <h1>La estrategia<br><span class="highlight">est&aacute; funcionando</span></h1>
             <p class="subtitle" style="font-size: 18px; margin-top: 10px; max-width: 700px;">De $26.6M en 2024 a $97.6M en 2025. Q1 2026: $38M con ROAS 5.3x &mdash; la mejor eficiencia de la historia.</p>
             <div class="hero-pills" style="margin-top: 40px;">
@@ -686,7 +743,7 @@
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 8;
+        const totalSlides = 9;
 
         function showSlide(n) {
             document.querySelectorAll('.slide').forEach(s => {
